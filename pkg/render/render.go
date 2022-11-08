@@ -2,17 +2,21 @@ package render
 
 import (
 	"fmt"
-	"html/template"
 	"net/http"
+	"text/template"
 )
 
 func RenderTemplate(w http.ResponseWriter, html string) {
 
-	parsedTemplates, _ := template.ParseFiles("./temp/" + html)
-	err := parsedTemplates.Execute(w, nil)
+	parsedTemplate, _ := template.ParseFiles("./temp/" + html)
+
+	err := parsedTemplate.Execute(w, nil)
 
 	if err != nil {
-		fmt.Println("error message:", err)
+
+		fmt.Println("error msg", err)
+
 		return
+
 	}
 }
