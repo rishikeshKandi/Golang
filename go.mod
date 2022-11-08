@@ -1,3 +1,3 @@
-module github.com/rishikeshKandi/golang
+module github.com/rishikeshKandi/Golang
 
 go 1.19
